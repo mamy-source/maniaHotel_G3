@@ -33,3 +33,5 @@ connexion.connection(root)
 # Lancer la boucle principale
 root.mainloop()
 
+#lien repository https://github.com/mamy-source/maniaHotel_G3.git
+
