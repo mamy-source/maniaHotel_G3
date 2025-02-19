@@ -1,5 +1,6 @@
 from ttkthemes import ThemedTk
 from tkinter import ttk
+
 from .clear_frame import clear_data
 
 
@@ -45,10 +46,10 @@ def home_page(window):
 
 
     # frame who show all managements
-    Frame4 = ttk.Labelframe(Frame2, borderwidth=2, width=250,relief='groove')
+    Frame4 = ttk.Labelframe(Frame2, width=250,relief='flat')
     Frame4.pack(fill='both', padx=2, pady=1, expand='yes')
-    lbname = ttk.Label(Frame4, text="statistique ")
+    lbname = ttk.Label(Frame4, text="Liste des Clients ")
     lbname.pack(pady=1, padx=50)
-    name = ttk.Entry(Frame4)
-    name.pack(pady=2, padx=2)
+
+  
     
