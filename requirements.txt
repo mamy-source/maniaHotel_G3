@@ -1,2 +1,8 @@
+anytree==2.6.0
+graphviz==0.10.1
+mysql-connector-python==9.2.0
 pillow==11.1.0
+setuptools==40.8.0
+six==1.17.0
+treeview==1.2
 ttkthemes==3.2.2
