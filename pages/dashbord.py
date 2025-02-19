@@ -1,5 +1,6 @@
 from ttkthemes import ThemedTk
 from tkinter import ttk
+from tkinter.ttk import Treeview
 
 from .clear_frame import clear_data
 
