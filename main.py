@@ -6,7 +6,7 @@ from pages import connexion
 
 
 root = ThemedTk()
-root.geometry("500x400")
+root.geometry("600x500")
 #print(root.get_themes())  # Affiche tous les thèmes disponibles
 
 
@@ -20,14 +20,6 @@ style.configure('Custom.TFrame', background='#5a68f0', fg = 'light', font = ('ar
 print(style.lookup('TLabel','fg'))
 
 
-
-'''def clear_frame():
-    for widget in root.winfo_children(): #maka ny widget rehetra
-        widget.destroy() #mamafa ny widget
-
-def dashboard():
-    clear_frame()
-'''
 
 connexion.connection(root)
     

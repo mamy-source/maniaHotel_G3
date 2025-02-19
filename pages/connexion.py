@@ -1,7 +1,9 @@
 from ttkthemes import ThemedTk
+import tkinter as tk 
 from tkinter import ttk, messagebox
 from .clear_frame import clear_data
 from .dashbord import home_page
+from PIL import Image, ImageTk
 
 def connection(window):
     def Seconnecter():
@@ -31,9 +33,14 @@ def connection(window):
     frame = ttk.Labelframe(window, relief='flat')
     frame.pack(fill="both",padx=50, pady=50)
 
-    # Ajouter un widget avec ttk (Button, Label, etc.)
-    label = ttk.Label(frame, text="Mania Hotel", font=("arial", 16))
+    image = Image.open("./image/logo.png") 
+    photo = ImageTk.PhotoImage(image)
+
+    label = tk.Label(frame, image=photo,fg= "black")
     label.pack(pady=20)
+    label.image = photo 
+
+
 
     lbname = ttk.Label(frame, text="Username: ")
     lbname.pack(pady=1, padx=20)
