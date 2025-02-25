@@ -45,7 +45,7 @@ create table if not exists 'login'(
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(200) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
-    confirm_mdp VARCHAR(100) NOT NULL,
+    role ENUM("gerant","receptionist"),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 );
 

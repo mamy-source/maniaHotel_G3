@@ -1,6 +1,7 @@
 from ttkthemes import ThemedTk
 from tkinter import ttk
 from tkinter.ttk import Treeview
+from PIL import Image, ImageTk
 
 from .clear_frame import clear_data
 
@@ -17,32 +18,55 @@ def home_page(window):
 
     # frame  menu
     Frame3 = ttk.Labelframe(Frame2,width=300,style='Custom.TFrame')
-    Frame3.pack(side='left', padx=2, pady=1)
+    Frame3.pack(side='left', padx=0, pady=0)
 
-    label_maniaHotel = ttk.Label(Frame3, text='Mania Hotel',font=('arial',14,'bold'), foreground='#fff', background='#5a68f0')
+    image = Image.open("./image/but_1.png") 
+    photo = ImageTk.PhotoImage(image)
+    label_maniaHotel = ttk.Label(Frame3, image=photo,borderwidth=0, relief='flat')
     label_maniaHotel.pack(pady=2)
+    label_maniaHotel.image = photo
 
-
-    home = ttk.Button(Frame3, text='Accueil & Statistique', style= 'Custom.TButton')
+    image = Image.open("./image/but_2.png") 
+    photo = ImageTk.PhotoImage(image)
+    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
     home.pack(pady=2)
+    home.image = photo
 
-    home = ttk.Button(Frame3, text='Gestion des Clients', style= 'Custom.TButton')
+    image = Image.open("./image/but_3.png") 
+    photo = ImageTk.PhotoImage(image)
+    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
     home.pack(pady=2)
+    home.image = photo
 
-    home = ttk.Button(Frame3, text='Gestion des chambres', style= 'Custom.TButton')
+    image = Image.open("./image/but_4.png") 
+    photo = ImageTk.PhotoImage(image)
+    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
     home.pack(pady=2)
+    home.image = photo
 
-    home = ttk.Button(Frame3, text='Gestion des réservations', style= 'Custom.TButton')
+    image = Image.open("./image/but_5.png") 
+    photo = ImageTk.PhotoImage(image)
+    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
     home.pack(pady=2)
+    home.image = photo
 
-    home = ttk.Button(Frame3, text='Gestion des Paiements', style= 'Custom.TButton')
+    image = Image.open("./image/but_6.png") 
+    photo = ImageTk.PhotoImage(image)
+    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
     home.pack(pady=2)
+    home.image = photo
 
-    home = ttk.Button(Frame3, text='Utilisateurs', style= 'Custom.TButton')
+    image = Image.open("./image/but_7.png") 
+    photo = ImageTk.PhotoImage(image)
+    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
     home.pack(pady=2)
+    home.image = photo
 
-    home = ttk.Button(Frame3, text='Déconnexion', style= 'Custom.TButton')
+    image = Image.open("./image/but_8.png") 
+    photo = ImageTk.PhotoImage(image)
+    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
     home.pack(pady=2)
+    home.image = photo
 
 
 
@@ -50,7 +74,7 @@ def home_page(window):
     Frame4 = ttk.Labelframe(Frame2, width=250,relief='flat')
     Frame4.pack(fill='both', padx=2, pady=1, expand='yes')
     lbname = ttk.Label(Frame4, text="Liste des Clients ")
-    lbname.pack(pady=1, padx=50)
+    lbname.pack(pady=0, padx=50)
 
   
     
