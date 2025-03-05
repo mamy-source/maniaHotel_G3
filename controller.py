@@ -65,8 +65,11 @@ def get_room():
     query = "SELECT * FROM rooms"
     cursor.execute(query)
     if cursor.rowcount == 0:
-        return False
-    return cursor.fetchall()
+        return []
+    columns = [column[0] for column in cursor.description]  # Récupère les noms des colonnes
+    rows = cursor.fetchall()
+    # Convertir chaque ligne en dictionnaire
+    return [dict(zip(columns, row)) for row in rows]
 
 # Add reservations
 def add_reservation(customer_id, reservation_date,check_in,check_out,room_id):

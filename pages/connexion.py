@@ -2,7 +2,7 @@ from ttkthemes import ThemedTk
 import tkinter as tk 
 from tkinter import ttk, messagebox
 from .clear_frame import clear_data
-from .dashbord import home_page
+from .dashbord import Dasboard
 from controller import *
 from PIL import Image, ImageTk
 
@@ -21,7 +21,7 @@ def connection(window):
                 
             elif checkUser(username=name,password=mdp):
                 clear_data(window)
-                home_page(window)
+                Dasboard(window)
             else:
                 messagebox.showerror('','nom ou mot de pass incorrect')
                 name_entry.delete("0", "end")

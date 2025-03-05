@@ -6,13 +6,15 @@ from pages import connexion
 
 
 root = ThemedTk()
-root.geometry("600x500")
+root.geometry("1200x500")
+root.resizable(False,False)
 #print(root.get_themes())  # Affiche tous les thèmes disponibles
 
 
 root.set_theme("scidpurple")
 style = ttk.Style()
 style.theme_use('clam')
+style.configure('Custom.TButton1',background = '#fff', font=('arial', 12),relief = 'flat')
 style.configure('Custom.TButton', background='#5a68f0',foreground='#fff',relief = 'flat',font=('arial', 12))
 
 style.configure('Custom.TLabel', background = '#fff', font=('arial', 12),relief = 'flat')

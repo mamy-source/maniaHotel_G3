@@ -1,80 +1,99 @@
 from ttkthemes import ThemedTk
 from tkinter import ttk
+import tkinter as tk 
 from tkinter.ttk import Treeview
 from PIL import Image, ImageTk
 
 from .clear_frame import clear_data
+from .customers.show_customer import Customers
+#from .customers.add_customers import AddCustomer
+from .rooms.main import Rooms
+from .reservations.main import Reservations
+
+class Dasboard:
+    def __init__(self, window):
+        self.window = window
+        self.customers_page = Customers(window)
+        self.rooms_page = Rooms(window)
+        self.reservation_page = Reservations(window)
+        #self.add_customer_page = AddCustomer(window)
+
+        self.Frame3 = ttk.Frame(self.window,width=300,style='Custom.TFrame')
+        self.Frame3.pack(side='left', padx=0, pady=0)
+
+        self.image = Image.open("./image/but_1.png") 
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.label_maniaHotel = ttk.Label(self.Frame3, image=self.photo,style="Custom.TButton")
+        self.label_maniaHotel.pack(pady=2)
+        self.label_maniaHotel.image = self.photo
+
+        self.image = Image.open("./image/but_2.png") 
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.btn_home = ttk.Button(self.Frame3, image=self.photo,style="Custom.TButton")
+        self.btn_home.pack(pady=2)
+        self.btn_home.image = self.photo
+
+        self.image = Image.open("./image/but_3.png") 
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.btn_customer = ttk.Button(self.Frame3, image=self.photo,style="Custom.TButton",command=lambda:self.get_customer())
+        self.btn_customer.pack(pady=2)
+        self.btn_customer.image = self.photo
+
+        self.image = Image.open("./image/but_4.png") 
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.btn_reservation = ttk.Button(self.Frame3, image=self.photo,style="Custom.TButton",command=lambda:self.get_reservation())
+        self.btn_reservation.pack(pady=2)
+        self.btn_reservation.image = self.photo
+
+        self.image = Image.open("./image/but_5.png") 
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.btn_room = ttk.Button(self.Frame3, image=self.photo,style="Custom.TButton",command=lambda:self.get_rooms())
+        self.btn_room.pack(pady=2)
+        self.btn_room.image = self.photo
+
+        self.image = Image.open("./image/but_6.png") 
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.btn_paiment = ttk.Button(self.Frame3, image=self.photo,style="Custom.TButton")
+        self.btn_paiment.pack(pady=2)
+        self.btn_paiment.image = self.photo
+
+        self.image = Image.open("./image/but_7.png") 
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.btn_user = ttk.Button(self.Frame3, image=self.photo,style="Custom.TButton")
+        self.btn_user.pack(pady=2)
+        self.btn_user.image = self.photo
+
+        self.image = Image.open("./image/but_8.png") 
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.btn_log_out = ttk.Button(self.Frame3, image=self.photo,style="Custom.TButton")
+        self.btn_log_out.pack(pady=2)
+        self.btn_log_out.image = self.photo
+
+    def get_customer(self):
+        self.customers_page.show()   
+        self.rooms_page.hide() 
+        self.reservation_page.hide()      
+        #self.add_customer_page.hide()
+
+    def get_rooms(self):
+        self.rooms_page.show()       
+        self.customers_page.hide()
+        self.reservation_page.hide()
+        #self.add_customer_page.hide() 
+
+    def get_reservation(self):
+        self.reservation_page.show()
+        self.customers_page.hide()
+        self.rooms_page.hide() 
 
 
-def home_page(window):
+
+
     
-    clear_data(window)
-
-     # frame 
-    Frame2 = ttk.Frame(window, borderwidth=2, relief='groove',)
-    Frame2.pack(fill='both', padx=2, pady=2)
-
- 
-
-    # frame  menu
-    Frame3 = ttk.Labelframe(Frame2,width=300,style='Custom.TFrame')
-    Frame3.pack(side='left', padx=0, pady=0)
-
-    image = Image.open("./image/but_1.png") 
-    photo = ImageTk.PhotoImage(image)
-    label_maniaHotel = ttk.Label(Frame3, image=photo,borderwidth=0, relief='flat')
-    label_maniaHotel.pack(pady=2)
-    label_maniaHotel.image = photo
-
-    image = Image.open("./image/but_2.png") 
-    photo = ImageTk.PhotoImage(image)
-    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
-    home.pack(pady=2)
-    home.image = photo
-
-    image = Image.open("./image/but_3.png") 
-    photo = ImageTk.PhotoImage(image)
-    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
-    home.pack(pady=2)
-    home.image = photo
-
-    image = Image.open("./image/but_4.png") 
-    photo = ImageTk.PhotoImage(image)
-    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
-    home.pack(pady=2)
-    home.image = photo
-
-    image = Image.open("./image/but_5.png") 
-    photo = ImageTk.PhotoImage(image)
-    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
-    home.pack(pady=2)
-    home.image = photo
-
-    image = Image.open("./image/but_6.png") 
-    photo = ImageTk.PhotoImage(image)
-    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
-    home.pack(pady=2)
-    home.image = photo
-
-    image = Image.open("./image/but_7.png") 
-    photo = ImageTk.PhotoImage(image)
-    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
-    home.pack(pady=2)
-    home.image = photo
-
-    image = Image.open("./image/but_8.png") 
-    photo = ImageTk.PhotoImage(image)
-    home = ttk.Button(Frame3, image=photo, style= 'Custom.TButton')
-    home.pack(pady=2)
-    home.image = photo
 
 
 
-    # frame who show all managements
-    Frame4 = ttk.Labelframe(Frame2, width=250,relief='flat')
-    Frame4.pack(fill='both', padx=2, pady=1, expand='yes')
-    lbname = ttk.Label(Frame4, text="Liste des Clients ")
-    lbname.pack(pady=0, padx=50)
+   
 
   
     
